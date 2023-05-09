@@ -11,10 +11,12 @@
         background-color: #e8d5c4;
       }
       .footer {
+        text-align: center;
         background-color: #e8d5c4;
       }
 
       .submit_button {
+        border-radius: 15px;
         font-family: poppins;
         border: 0;
         color: rgb(0, 0, 0);
@@ -24,6 +26,7 @@
       }
 
       .reset_button {
+        border-radius: 15px;
         font-family: poppins;
         border: 0;
         color: rgb(0, 0, 0);
@@ -33,6 +36,7 @@
       }
 
       .cancel_button {
+        border-radius: 15px;
         font-family: poppins;
         border: 0;
         color: rgb(0, 0, 0);
@@ -60,7 +64,7 @@
       </tr>
       <tr class="table_body">
         <td>First Name</td>
-        <td><input type="text" /></td>
+        <td><input type="text" class="input" /></td>
       </tr>
       <tr class="table_body">
         <td>Last Name</td>
@@ -69,7 +73,7 @@
       <tr class="table_body">
         <td>Date of Birth</td>
         <td>
-          <select name="Month">
+          <select name="Month" class="input">
             <option value="default_month" selected>Month</option>
             <option value="Jan">Jan</option>
             <option value="Feb">Feb</option>
@@ -84,47 +88,125 @@
             <option value="Nov">Nov</option>
             <option value="Dec">Dec</option>
           </select>
-          <select name="Day">
+          <select name="Day" class="input">
             <option value="default_day" selected>Day</option>
             <option value="day1">1</option>
             <option value="day2">2</option>
             <option value="day3">3</option>
+            <option value="day4">4</option>
+            <option value="day5">5</option>
+            <option value="day6">6</option>
+            <option value="day7">7</option>
+            <option value="day8">8</option>
+            <option value="day9">9</option>
+            <option value="day10">10</option>
+            <option value="day11">11</option>
+            <option value="day12">12</option>
+            <option value="day13">13</option>
+            <option value="day14">14</option>
+            <option value="day15">15</option>
+            <option value="day16">16</option>
+            <option value="day17">17</option>
+            <option value="day18">18</option>
+            <option value="day19">19</option>
+            <option value="day20">20</option>
+            <option value="day21">21</option>
+            <option value="day22">22</option>
+            <option value="day23">23</option>
+            <option value="day24">24</option>
+            <option value="day25">25</option>
+            <option value="day26">26</option>
+            <option value="day27">27</option>
+            <option value="day28">28</option>
+            <option value="day29">29</option>
+            <option value="day30">30</option>
+            <option value="day31">31</option>
           </select>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-      </tr>
-      <tr class="footer" colspan="2">
-        <td colspan="2">
-          <input class="submit_button" type="submit" />
-          <input class="reset_button" type="reset" />
-          <input class="cancel_button" type="button" value="Cancel" />
+          <select name="Year" class="input">
+            <option value="default_year" selected>Year</option>
+            <option value="year1">2000</option>
+            <option value="year2">2001</option>
+            <option value="year3">2002</option>
+            <option value="year4">2003</option>
+            <option value="year5">2004</option>
+            <option value="year6">2005</option>
+            <option value="year7">2006</option>
+            <option value="year8">2007</option>
+            <option value="year9">2008</option>
+            <option value="year10">2009</option>
+            <option value="year11">2010</option>
+            <option value="year12">2011</option>
+            <option value="year13">2012</option>
+            <option value="year14">2013</option>
+            <option value="year15">2014</option>
+            <option value="year16">2015</option>
+            <option value="year17">2016</option>
+            <option value="year18">2017</option>
+            <option value="year19">2018</option>
+            <option value="year20">2019</option>
+            <option value="year21">2020</option>
+            <option value="year22">2021</option>
+            <option value="year23">2022</option>
+            <option value="year24">2023</option>
+            <tr class="table_body">
+              <td>Gender</td>
+              <td>
+                <input type="radio" id="male" name="gender" />
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" />
+                <label for="female">Female</label>
+              </td>
+            </tr>
+            <tr class="table_body">
+              <td>Country</td>
+              <td>
+                <select name="Country" class="input">
+                  <option value="default_country" selected>Country</option>
+                  <option value="australia">Spain</option>
+                  <option value="philippines">Philippines</option>
+                  <option value="croatia">Italy</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="table_body">
+              <td>Email</td>
+              <td>
+                <input type="text" value="Enter Email..." class="input" />
+              </td>
+            </tr>
+            <tr class="table_body">
+              <td>Phone</td>
+              <td>
+                <input
+                  type="text"
+                  value="Enter Phone Number..."
+                  class="input"
+                />
+              </td>
+            </tr>
+            <tr class="table_body">
+              <td>Password</td>
+              <td><input type="password" class="input" /></td>
+            </tr>
+            <tr class="table_body">
+              <td>Confirm Password</td>
+              <td><input type="password" class="input" /></td>
+            </tr>
+            <tr class="table_body">
+              <td></td>
+              <td>
+                <input type="checkbox" id="Agree" />
+                <label for="agree">I Agree to the Terms of Use</label>
+              </td>
+            </tr>
+            <tr class="footer" colspan="2">
+              <td colspan="2">
+                <input class="submit_button" type="submit" /> &nbsp;
+                <input class="reset_button" type="reset" /> &nbsp;
+                <input class="cancel_button" type="button" value="Cancel" />
+              </td>
+            </tr>
+          </select>
         </td>
       </tr>
     </table>
