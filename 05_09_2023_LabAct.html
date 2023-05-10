@@ -6,14 +6,14 @@
       .header {
         font-size: 20px;
         font-weight: bold;
-        color:#00A19D;
+        color: #00a19d;
         font-family: poppins;
         text-align: center;
-        background-color:#FFF8E5;
+        background-color: #fff8e5;
       }
       .footer {
         text-align: center;
-        background-color:#FFF8E5;
+        background-color: #fff8e5;
       }
 
       .submit_button {
@@ -47,16 +47,30 @@
       }
       .table_body {
         font-family: poppins;
-        color: #FFF8E5;
-        background-color: #00A19D;
+        color: #fff8e5;
+        background-color: #00a19d;
       }
       .input {
         font-weight: light;
-        color: #00A19D;
-        background-color:#FFF8E5;
+        color: #00a19d;
+        background-color: #fff8e5;
         font-family: poppins;
       }
     </style>
+    <script>
+      function submitForm() {
+        alert("Submitting form...");
+      }
+
+      function resetForm() {
+        alert("Resetting form...");
+      }
+
+      function cancelForm() {
+        
+        alert("Canceling form...");
+      }
+    </script>
   </head>
   <body>
     <table cellpadding="10" border="0" cellspacing="0">
@@ -202,9 +216,26 @@
             </tr>
             <tr class="footer" colspan="2">
               <td colspan="2">
-                <input class="submit_button" type="submit" value="Submit" /> &nbsp;
-                <input class="reset_button" type="reset" value="Reset"/> &nbsp;
-                <input class="cancel_button" type="button" value="Cancel" />
+                <input
+                  class="submit_button"
+                  type="submit"
+                  value="Submit"
+                  onclick="submitForm()"
+                />
+                &nbsp;
+                <input
+                  class="reset_button"
+                  type="reset"
+                  value="Reset"
+                  onclick="resetForm()"
+                />
+                &nbsp;
+                <input
+                  class="cancel_button"
+                  type="button"
+                  value="Cancel"
+                  onclick="cancelForm()"
+                />
               </td>
             </tr>
           </select>
