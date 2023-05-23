@@ -26,54 +26,78 @@
         }
         const countryInput = document.forms["myForm"]["country"];
         if (countryInput.value === "") {
-          alert("Please enter your Country");
+          alert("Please select a  Country");
           return false;
         }
       }
     </script>
+    <style>
+      body {
+        font-family: poppins light;
+        align-items: center;
+        justify-content: space-around;
+        display: flex;
+        color: #025464;
+      }
+      table {
+        border-collapse: collapse;
+        background-color:#E8AA42;
+      }
+      form {
+        font-family: poppins light;
+        font-weight: 800;
+      }
+      .container {
+          display: flex;
+          text-align: center;
+          justify-content: space-around;
+      }
+    </style>
   </head>
   <body>
-    <form name="myForm" onsubmit="return validateForm()">
-      <table cellpadding="2" border="1" cellspacing="0">
-        <tr>
-          <td>Name</td>
-          <td><input type="text" name="name" /></td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td><input type="text" name="email" /></td>
-        </tr>
-        <tr>
-          <td>Zip Code</td>
-          <td><input type="text" name="zipCode" /></td>
-        </tr>
-        <tr>
-          <td>Country</td>
-          <td>
-            <select name="country" class="input">
-              <option value="" selected disabled>Select a country</option>
-              <option value="Australia">Australia</option>
-              <option value="Canada">Canada</option>
-              <option value="China">China</option>
-              <option value="Croatia">Croatia</option>
-              <option value="France">France</option>
-              <option value="Germany">Germany</option>
-              <option value="India">India</option>
-              <option value="Italy">Italy</option>
-              <option value="Japan">Japan</option>
-              <option value="Philippines">Philippines</option>
-              <option value="Russia">Russia</option>
-              <option value="Spain">Spain</option>
-              <option value="UK">UK</option>
-              <option value="USA">USA</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td><input type="submit" value="Submit" /></td>
-        </tr>
-      </table>
-    </form>
+    <div class="container">
+      <form name="myForm" onsubmit="return validateForm()">
+        <table cellpadding="2" border="1" cellspacing="0">
+          <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" /></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><input type="text" name="email" /></td>
+          </tr>
+          <tr>
+            <td>Zip Code</td>
+            <td><input type="text" name="zipCode" /></td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>
+              <select name="country" class="input">
+                <option value="" selected disabled>Select a country</option>
+                <option value="Australia">Australia</option>
+                <option value="Canada">Canada</option>
+                <option value="China">China</option>
+                <option value="Croatia">Croatia</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="India">India</option>
+                <option value="Italy">Italy</option>
+                <option value="Japan">Japan</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Russia">Russia</option>
+                <option value="Spain">Spain</option>
+                <option value="UK">UK</option>
+                <option value="USA">USA</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Submit" class="form" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
   </body>
 </html>
