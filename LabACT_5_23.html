@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function validateForm() {
+        const nameInput = document.forms["myForm"]["name"];
+        if (nameInput.value === "") {
+          alert("Please enter your Name");
+          nameInput.focus();
+          return false;
+        }
+        const emailInput = document.forms["myForm"]["email"];
+        if (emailInput.value === "") {
+          alert("Please enter your Email");
+          nameInput.focus();
+          return false;
+        }
+        const zipInput = document.forms["myForm"]["zipCode"];
+        if (zipInput.value === "") {
+          alert("Please enter your Zip Code");
+          return false;
+        }
+        if (zipInput.value.length !== 4) {
+          alert("Please enter a valid Zip Code");
+          return false;
+        }
+        const countryInput = document.forms["myForm"]["country"];
+        if (countryInput.value === "") {
+          alert("Please enter your Country");
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name="myForm" onsubmit="return validateForm()">
+      <table cellpadding="2" border="1" cellspacing="0">
+        <tr>
+          <td>Name</td>
+          <td><input type="text" name="name" /></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="text" name="email" /></td>
+        </tr>
+        <tr>
+          <td>Zip Code</td>
+          <td><input type="text" name="zipCode" /></td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td>
+            <select name="country" class="input">
+              <option value="" selected disabled>Select a country</option>
+              <option value="Australia">Australia</option>
+              <option value="Canada">Canada</option>
+              <option value="China">China</option>
+              <option value="Croatia">Croatia</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+              <option value="India">India</option>
+              <option value="Italy">Italy</option>
+              <option value="Japan">Japan</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Russia">Russia</option>
+              <option value="Spain">Spain</option>
+              <option value="UK">UK</option>
+              <option value="USA">USA</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="submit" value="Submit" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
