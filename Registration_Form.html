@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <style>
+      h3 {
+        font-family: poppins light;
+        font-size: 25pt;
+        font-style: normal;
+        font-weight: bold;
+        color: SlateBlue;
+        text-align: center;
+      }
+      h3 {
+        font-family: poppins light;
+        font-size: 25pt;
+        font-style: normal;
+        font-weight: bold;
+        color: SlateBlue;
+        text-align: center;
+        text-decoration: underline;
+      }
+
+      table {
+        font-family: poppins light;
+        color: white;
+        font-size: 11pt;
+        font-style: normal;
+        font-weight: bold;
+        background-color: SlateBlue;
+        border-collapse: collapse;
+        border: 2px solid navy;
+      }
+      table.inner {
+        border: 0px;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <h3 align="center">REGISTRATION FORM</h3>
+    <form action="">
+      <table align="center" cellpadding="10">
+        <!----- Name ---------------------------------------------------------->
+        <tr>
+          <td>Name</td>
+          <td>
+            <input type="text" name="Name : " maxlength="60" />
+          </td>
+        </tr>
+        <!----- Address ---------------------------------------------------------->
+        <tr>
+          <td>Address</td>
+          <td>
+            <input type="text" name="Address : " maxlength="60" />
+          </td>
+        </tr>
+        <!----- Email Address ---------------------------------------------------------->
+        <tr>
+          <td>Email Address :</td>
+          <td>
+            <input type="text" name="Email_Address" maxlength="30" />
+          </td>
+        </tr>
+        <!----- Password ----------------------------------------------------------->
+        <tr>
+          <td>Password :</td>
+          <td>
+            <input type="password" name="Password" maxlength="15" />
+          </td>
+        </tr>
+        <!----- Phone Number ----------------------------------------------------------->
+        <tr>
+          <td>Phone Number :</td>
+          <td>
+            <input type="text" name="Email_Address" maxlength="11" />
+          </td>
+        </tr>
+        <!----- Course ---------------------------------------------------------->
+        <tr>
+          <td>Select Your Course :</td>
+          <td>
+            <select name="country" class="input">
+              <option value="" selected disabled>Select a course</option>
+              <option value="BSCS">BSCS</option>
+              <option value="BSIT">BSIT</option>
+              <option value="BSE">BSE - EM</option>
+              <option value="BSE">BSE - GDD</option>
+            </select>
+          </td>
+        </tr>
+        <!----- Comment ---------------------------------------------------------->
+        <tr>
+          <td>Comments :</td>
+          <td>
+            <textarea name="comment" cols="30" rows="10">
+Enter Comments Here.</textarea
+            >
+          </td>
+        </tr>
+
+        <!----- Submit and Reset ------------------------------------------------->
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
