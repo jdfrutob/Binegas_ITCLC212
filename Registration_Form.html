@@ -56,74 +56,64 @@
     <script>
       function validateForm() {
         const form = document.forms["myForm"];
-        let allFieldsBlank = true;
-        for (let i = 0; i < form.elements.length; i++) {
-          if (form.elements[i].value !== "") {
-            allFieldsBlank = false;
-            break;
-          }
-        }
-
-        if (allFieldsBlank) {
-          alert("All fields must be filled out");
-          return false;
-        }
+        let isValid = true;
 
         const name = form["Name"].value;
         if (name === "") {
           alert("Name must be filled out");
-          return false;
+          isValid = false;
         }
 
         const address = form["Address"].value;
         if (address === "") {
           alert("Address must be filled out");
-          return false;
+          isValid = false;
         }
 
         const emailAddress = form["Email_Address"].value;
         if (emailAddress === "") {
           alert("Email Address must be filled out");
-          return false;
+          isValid = false;
         }
 
         const password = form["Password"].value;
         if (password === "") {
           alert("Password must be filled out");
-          return false;
-        }
-
-        if (password.length < 8) {
+          isValid = false;
+        } else if (password.length < 8) {
           alert("Password must be 8 characters or longer");
-          return false;
-        }
-        if (password.length > 15) {
-          alert("Password must  not be longer than 15 characters");
-          return false;
+          isValid = false;
+        } else if (password.length > 15) {
+          alert("Password must not be longer than 15 characters");
+          isValid = false;
         }
 
         const phoneNumber = form["phoneNumber"].value;
         if (phoneNumber === "") {
           alert("Phone Number must be filled out");
-          return false;
-        }
-
-        if (phoneNumber.length !== 11) {
+          isValid = false;
+        } else if (phoneNumber.length !== 11) {
           alert("Phone Number must be 11 digits only");
-          return false;
+          isValid = false;
         }
 
         const course = form["Course"].value;
         if (course === "") {
           alert("Please select a course");
-          return false;
+          isValid = false;
         }
 
-        return true;
+        if (isValid) {
+          submitForm();
+        }
+
+        return false;
       }
+
       function submitForm() {
         alert("Submitting form...");
       }
+
       function resetForm() {
         alert("Resetting form...");
       }
