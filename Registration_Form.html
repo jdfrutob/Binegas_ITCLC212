@@ -2,84 +2,197 @@
   <head>
     <style>
       h3 {
-        font-family: poppins light;
+        font-family: vollkorn regular;
         font-size: 25pt;
         font-style: normal;
         font-weight: bold;
-        color: SlateBlue;
+        color: #f08b6f;
         text-align: center;
       }
       h3 {
-        font-family: poppins light;
+        font-family: vollkorn regular;
         font-size: 25pt;
-        font-style: normal;
+        font-style: italic;
         font-weight: bold;
-        color: SlateBlue;
+        color: #f08b6f;
         text-align: center;
-        text-decoration: underline;
       }
 
       table {
         font-family: poppins light;
-        color: white;
-        font-size: 11pt;
+        color: #f08b6f;
+        font-size: 15pt;
         font-style: normal;
         font-weight: bold;
-        background-color: SlateBlue;
+        background-color: #feefc6;
         border-collapse: collapse;
-        border: 2px solid navy;
+        border: 10px solid #73aeaa;
       }
-      table.inner {
-        border: 0px;
+      .input {
+        font-weight: light;
+        color: #f08b6f;
+        background-color: #feefc6;
+        font-family: poppins;
+      }
+      .submit_button {
+        border-radius: 15px;
+        font-family: poppins;
+        border: 0;
+        color: rgb(0, 0, 0);
+        background-color: #73aeaa;
+        padding: 10px 10px;
+        width: 70px;
+      }
+      .reset_button {
+        border-radius: 15px;
+        font-family: poppins;
+        border: 0;
+        color: rgb(0, 0, 0);
+        background-color: #f08b6f;
+        padding: 10px 10px;
+        width: 70px;
       }
     </style>
-    <script></script>
-  </head>
+    <script>
+      function validateForm() {
+        const form = document.forms["myForm"];
+        let allFieldsBlank = true;
+        for (let i = 0; i < form.elements.length; i++) {
+          if (form.elements[i].value !== "") {
+            allFieldsBlank = false;
+            break;
+          }
+        }
 
+        if (allFieldsBlank) {
+          alert("All fields must be filled out");
+          return false;
+        }
+
+        const name = form["Name"].value;
+        if (name === "") {
+          alert("Name must be filled out");
+          return false;
+        }
+
+        const address = form["Address"].value;
+        if (address === "") {
+          alert("Address must be filled out");
+          return false;
+        }
+
+        const emailAddress = form["Email_Address"].value;
+        if (emailAddress === "") {
+          alert("Email Address must be filled out");
+          return false;
+        }
+
+        const password = form["Password"].value;
+        if (password === "") {
+          alert("Password must be filled out");
+          return false;
+        }
+
+        if (password.length < 8) {
+          alert("Password must be 8 characters or longer");
+          return false;
+        }
+        if (password.length > 15) {
+          alert("Password must  not be longer than 15 characters");
+          return false;
+        }
+
+        const phoneNumber = form["phoneNumber"].value;
+        if (phoneNumber === "") {
+          alert("Phone Number must be filled out");
+          return false;
+        }
+
+        if (phoneNumber.length !== 11) {
+          alert("Phone Number must be 11 digits only");
+          return false;
+        }
+
+        const course = form["Course"].value;
+        if (course === "") {
+          alert("Please select a course");
+          return false;
+        }
+
+        return true;
+      }
+      function submitForm() {
+        alert("Submitting form...");
+      }
+      function resetForm() {
+        alert("Resetting form...");
+      }
+    </script>
+  </head>
   <body>
     <h3 align="center">REGISTRATION FORM</h3>
-    <form action="">
+    <form
+      action=""
+      name="myForm"
+      onsubmit="return validateForm();"
+      method="post"
+    >
       <table align="center" cellpadding="10">
         <!----- Name ---------------------------------------------------------->
         <tr>
-          <td>Name</td>
+          <td>Name :</td>
           <td>
-            <input type="text" name="Name : " maxlength="60" />
+            <input class="input" type="text" name="Name" maxlength="60" />
           </td>
         </tr>
         <!----- Address ---------------------------------------------------------->
         <tr>
-          <td>Address</td>
+          <td>Address :</td>
           <td>
-            <input type="text" name="Address : " maxlength="60" />
+            <input class="input" type="text" name="Address" maxlength="60" />
           </td>
         </tr>
         <!----- Email Address ---------------------------------------------------------->
         <tr>
           <td>Email Address :</td>
           <td>
-            <input type="text" name="Email_Address" maxlength="30" />
+            <input
+              class="input"
+              type="text"
+              name="Email_Address"
+              maxlength="60"
+            />
           </td>
         </tr>
         <!----- Password ----------------------------------------------------------->
         <tr>
           <td>Password :</td>
           <td>
-            <input type="password" name="Password" maxlength="15" />
+            <input
+              class="input"
+              type="password"
+              name="Password"
+              maxlength="15"
+            />
           </td>
         </tr>
         <!----- Phone Number ----------------------------------------------------------->
         <tr>
           <td>Phone Number :</td>
           <td>
-            <input type="text" name="Email_Address" maxlength="11" />
+            <input
+              class="input"
+              type="text"
+              name="phoneNumber"
+              maxlength="11"
+            />
           </td>
         </tr>
         <!----- Course ---------------------------------------------------------->
         <tr>
           <td>Select Your Course :</td>
           <td>
-            <select name="country" class="input">
+            <select name="Course" class="input">
               <option value="" selected disabled>Select a course</option>
               <option value="BSCS">BSCS</option>
               <option value="BSIT">BSIT</option>
@@ -92,7 +205,7 @@
         <tr>
           <td>Comments :</td>
           <td>
-            <textarea name="comment" cols="30" rows="10">
+            <textarea class="input" name="comment" cols="30" rows="10">
 Enter Comments Here.</textarea
             >
           </td>
@@ -101,8 +214,18 @@ Enter Comments Here.</textarea
         <!----- Submit and Reset ------------------------------------------------->
         <tr>
           <td colspan="2" align="center">
-            <input type="submit" value="Submit" />
-            <input type="reset" value="Reset" />
+            <input
+              class="submit_button"
+              type="submit"
+              value="Submit"
+              onclick="submitForm()"
+            />
+            <input
+              class="reset_button"
+              type="reset"
+              value="Reset"
+              onclick="resetForm()"
+            />
           </td>
         </tr>
       </table>
