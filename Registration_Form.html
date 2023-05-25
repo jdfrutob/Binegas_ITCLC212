@@ -66,58 +66,58 @@
         const form = document.forms["myForm"];
         let isValid = true;
 
-        const name = form["Name"].value;
-        if (name === "") {
+        const name = form["Name"];
+        if (name.value === "") {
           alert("Name must be filled out");
           isValid = false;
-          focusField("Name");
+          name.focus();
         }
 
-        const address = form["Address"].value;
-        if (address === "") {
+        const address = form["Address"];
+        if (address.value === "") {
           alert("Address must be filled out");
           isValid = false;
-          focusField("Address");
+          address.focus();
         }
 
-        const emailAddress = form["Email_Address"].value;
-        if (emailAddress === "") {
+        const emailAddress = form["Email_Address"];
+        if (emailAddress.value === "") {
           alert("Email Address must be filled out");
           isValid = false;
-          focusField("Email_Address");
+          emailAddress.focus();
         }
 
-        const password = form["Password"].value;
-        if (password === "") {
+        const password = form["Password"];
+        if (password.value === "") {
           alert("Password must be filled out");
           isValid = false;
-          focusField("Password");
-        } else if (password.length < 8) {
+          password.focus();
+        } else if (password.value.length < 8) {
           alert("Password must be 8 characters or longer");
           isValid = false;
-          focusField("Password");
-        } else if (password.length > 15) {
+          password.focus();
+        } else if (password.value.length > 15) {
           alert("Password must not be longer than 15 characters");
           isValid = false;
-          focusField("Password");
+          password.focus();
         }
 
-        const phoneNumber = form["phoneNumber"].value;
-        if (phoneNumber === "") {
+        const phoneNumber = form["phoneNumber"];
+        if (phoneNumber.value === "") {
           alert("Phone Number must be filled out");
           isValid = false;
-          focusField("phoneNumber");
-        } else if (phoneNumber.length !== 11) {
+          phoneNumber.focus();
+        } else if (phoneNumber.value.length !== 11) {
           alert("Phone Number must be 11 digits only");
           isValid = false;
-          focusField("phoneNumber");
+          phoneNumber.focus();
         }
 
-        const course = form["Course"].value;
-        if (course === "") {
+        const course = form["Course"];
+        if (course.value === "") {
           alert("Please select a course");
           isValid = false;
-          focusField("Course");
+          course.focus();
         }
 
         if (isValid) {
