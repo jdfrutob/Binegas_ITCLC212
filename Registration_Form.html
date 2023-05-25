@@ -70,45 +70,54 @@
         if (name === "") {
           alert("Name must be filled out");
           isValid = false;
+          focusField("Name");
         }
 
         const address = form["Address"].value;
         if (address === "") {
           alert("Address must be filled out");
           isValid = false;
+          focusField("Address");
         }
 
         const emailAddress = form["Email_Address"].value;
         if (emailAddress === "") {
           alert("Email Address must be filled out");
           isValid = false;
+          focusField("Email_Address");
         }
 
         const password = form["Password"].value;
         if (password === "") {
           alert("Password must be filled out");
           isValid = false;
+          focusField("Password");
         } else if (password.length < 8) {
           alert("Password must be 8 characters or longer");
           isValid = false;
+          focusField("Password");
         } else if (password.length > 15) {
           alert("Password must not be longer than 15 characters");
           isValid = false;
+          focusField("Password");
         }
 
         const phoneNumber = form["phoneNumber"].value;
         if (phoneNumber === "") {
           alert("Phone Number must be filled out");
           isValid = false;
+          focusField("phoneNumber");
         } else if (phoneNumber.length !== 11) {
           alert("Phone Number must be 11 digits only");
           isValid = false;
+          focusField("phoneNumber");
         }
 
         const course = form["Course"].value;
         if (course === "") {
           alert("Please select a course");
           isValid = false;
+          focusField("Course");
         }
 
         if (isValid) {
