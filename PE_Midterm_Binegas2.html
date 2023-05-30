@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab Activity</title>
+    <style>
+      .header {
+        font-size: 20px;
+        font-weight: bold;
+        color: #00a19d;
+        font-family: poppins;
+        text-align: center;
+        background-color: #fff8e5;
+      }
+      .footer {
+        text-align: center;
+        background-color: #fff8e5;
+      }
+
+      .submit_button {
+        border-radius: 15px;
+        font-family: poppins;
+        border: 0;
+        color: rgb(0, 0, 0);
+        background-color: #77dd77;
+        padding: 10px 10px;
+        width: 70px;
+      }
+      .table_body {
+        font-family: poppins;
+        color: #fff8e5;
+        background-color: #00a19d;
+      }
+      .input {
+        font-weight: light;
+        color: #00a19d;
+        background-color: #fff8e5;
+        font-family: poppins;
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <form name="MyForm">
+      <table cellpadding="10" border="0" cellspacing="0">
+        <tr>
+          <td class="header" colspan="2">Reservation Form</td>
+        </tr>
+        <tr class="table_body">
+          <td>Full Name :</td>
+          <td><input type="text" class="input" required /></td>
+        </tr>
+        <tr class="table_body">
+          <td>Email :</td>
+          <td><input type="text" class="input" required /></td>
+        </tr>
+        <tr class="table_body">
+          <td>Select Tour Package :</td>
+          <td>
+            <select name="TPackage" class="input" required>
+              <option value="default_Location" selected>Location</option>
+              <option value="Coron">Coron</option>
+              <option value="El Nido">El Nido</option>
+              <option value="Boracay">Boracay</option>
+              <option value="Siargao">Siargao</option>
+              <option value="Cebu">Cebu</option>
+              <option value="Bohol">Bohol</option>
+            </select>
+          </td>
+        </tr>
+        <tr class="table_body">
+          <td>Arrival Date :</td>
+          <td>
+            <input type="date" name="date" class="input" required />
+          </td>
+        </tr>
+        <tr class="table_body">
+          <td>Number of Persons :</td>
+          <td>
+            <select name="NoP" class="input" required>
+              <option value="default_NoP" selected>Number</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+          </td>
+        </tr>
+        <tr class="table_body">
+          <td>Packages :</td>
+          <td>
+            <select name="Packages" class="input" required>
+              <option value="default_NoP" selected>Packages</option>
+              <option value="1">Boarding</option>
+              <option value="2">Non-Boarding</option>
+              <option value="3">Tour Package</option>
+            </select>
+          </td>
+        </tr>
+        <tr class="table_body">
+          <td>Discount Code :</td>
+          <td><input type="text" class="input" required /></td>
+        </tr>
+        <tr class="table_body">
+          <td></td>
+          <td>
+            <input type="checkbox" id="Agree" />
+            <label for="agree">I Agree to the Terms of Use</label>
+          </td>
+        </tr>
+        <tr class="footer" colspan="2">
+          <td colspan="2">
+            <input
+              class="submit_button"
+              type="submit"
+              value="Submit"
+              onclick="submitForm()"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

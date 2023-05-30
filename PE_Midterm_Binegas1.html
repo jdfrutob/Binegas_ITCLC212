@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab Activity</title>
+    <style>
+      .header {
+        font-size: 20px;
+        font-weight: bold;
+        color: #00a19d;
+        font-family: poppins;
+        text-align: center;
+        background-color: #fff8e5;
+      }
+      .footer {
+        text-align: center;
+        background-color: #fff8e5;
+      }
+
+      .submit_button {
+        border-radius: 15px;
+        font-family: poppins;
+        border: 0;
+        color: rgb(0, 0, 0);
+        background-color: #77dd77;
+        padding: 10px 10px;
+        width: 70px;
+      }
+      .table_body {
+        font-family: poppins;
+        color: #fff8e5;
+        background-color: #00a19d;
+      }
+      .input {
+        font-weight: light;
+        color: #00a19d;
+        background-color: #fff8e5;
+        font-family: poppins;
+      }
+    </style>
+    <script language="JavaScript">
+      function checkLogin(x) {
+        if (x.user.value != "JD" && x.pass.value != "1234") {
+          alert("Invalid Login");
+          return false;
+        } else location = "PE_Midterm_Binegas2.html";
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <table cellpadding="10" border="0" cellspacing="0">
+        <tr>
+          <td class="header" colspan="2">Login</td>
+        </tr>
+        <tr class="table_body">
+          <td>Username :</td>
+          <td><input type="text" class="input" name="user" /></td>
+        </tr>
+        <tr class="table_body">
+          <td>Password :</td>
+          <td><input type="Password" class="input" name="pass" /></td>
+        </tr>
+        <tr class="footer" colspan="2">
+          <td colspan="2">
+            <input
+              class="submit_button"
+              type="submit"
+              value="Submit"
+              onclick="checkLogin(this.form)"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
