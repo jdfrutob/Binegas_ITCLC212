@@ -12,7 +12,7 @@
         background-color: #fff8e5;
       }
       .footer {
-        text-align: center;
+        text-align: left;
         background-color: #fff8e5;
       }
 
@@ -20,10 +20,10 @@
         border-radius: 15px;
         font-family: poppins;
         border: 0;
-        color: rgb(0, 0, 0);
-        background-color: #77dd77;
+        color: #fff8e5;
+        background-color: #00a19d;
         padding: 10px 10px;
-        width: 70px;
+        width: auto;
       }
       .table_body {
         font-family: poppins;
@@ -36,22 +36,55 @@
         background-color: #fff8e5;
         font-family: poppins;
       }
+      ::-webkit-file-upload-button {
+        font-weight: light;
+        color: #00a19d;
+        background-color: #fff8e5;
+        font-family: poppins;
+      }
     </style>
-    <script></script>
+    <script type="text/javascript">
+      function addtext() {
+        var fname = document.myform.full_name.value;
+        var email = document.myform.email.value;
+        var tour = document.myform.TPackage.value;
+        var date = document.myform.date.value;
+        var number = document.myform.NoP.value;
+        var packages = document.myform.Packages.value;
+        var code = document.myform.DiscountCode.value;
+        var file = document.myform.fileToUpload.value;
+        var terms = "";
+        if (document.getElementById("agree").checked) terms = "I agree";
+        else if (document.getElementById("disagree").checked)
+          terms = "I disagree";
+
+        localStorage.setItem("full_name", fname);
+        localStorage.setItem("email", email);
+        localStorage.setItem("TPackage", tour);
+        localStorage.setItem("date", date);
+        localStorage.setItem("NoP", number);
+        localStorage.setItem("Packages", packages);
+        localStorage.setItem("DiscountCode", code);
+        localStorage.setItem("fileToUpload", file);
+        localStorage.setItem("terms", terms);
+
+        window.location.href = "output.html";
+      }
+    </script>
   </head>
   <body>
-    <form name="MyForm">
+    <form name="myform" enctype="multipart/form-data" method="post">
       <table cellpadding="10" border="0" cellspacing="0">
         <tr>
           <td class="header" colspan="2">Reservation Form</td>
         </tr>
         <tr class="table_body">
           <td>Full Name :</td>
-          <td><input type="text" class="input" required /></td>
+          <td><input type="text" name="full_name" class="input" required /></td>
         </tr>
         <tr class="table_body">
           <td>Email :</td>
-          <td><input type="text" class="input" required /></td>
+          <td><input type="text" name="email" class="input" required /></td>
         </tr>
         <tr class="table_body">
           <td>Select Tour Package :</td>
@@ -69,9 +102,7 @@
         </tr>
         <tr class="table_body">
           <td>Arrival Date :</td>
-          <td>
-            <input type="date" name="date" class="input" required />
-          </td>
+          <td><input type="date" name="date" class="input" required /></td>
         </tr>
         <tr class="table_body">
           <td>Number of Persons :</td>
@@ -102,23 +133,30 @@
         </tr>
         <tr class="table_body">
           <td>Discount Code :</td>
-          <td><input type="text" class="input" required /></td>
+          <td><input type="text" name="DiscountCode" class="input" /></td>
         </tr>
         <tr class="table_body">
-          <td></td>
+          <td>Upload File :</td>
+          <td><input type="file" name="fileToUpload" id="fileToUpload" /></td>
+        </tr>
+        <tr class="table_body">
+          <td>Terms & Conditions</td>
           <td>
-            <input type="checkbox" id="Agree" />
-            <label for="agree">I Agree to the Terms of Use</label>
+            <input type="checkbox" id="agree" />
+            <label for="agree">I Agree</label>
+            <input type="checkbox" id="disagree" />
+            <label for="disagree">I Disagree</label>
           </td>
         </tr>
         <tr class="footer" colspan="2">
           <td colspan="2">
             <input
               class="submit_button"
-              type="submit"
-              value="Submit"
-              onclick="submitForm()"
+              type="button"
+              value="Complete Reservation"
+              onclick="addtext()"
             />
+            <input class="submit_button" type="reset" value="Reset" />
           </td>
         </tr>
       </table>

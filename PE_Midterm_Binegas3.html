@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab Activity - Output</title>
+    <style>
+      .header {
+        font-size: 20px;
+        font-weight: bold;
+        color: #00a19d;
+        font-family: poppins;
+        text-align: center;
+        background-color: #fff8e5;
+      }
+
+      .output_table {
+        font-family: poppins;
+        color: #fff8e5;
+        background-color: #00a19d;
+        margin: 0 auto;
+        padding: 10px;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="output_table" cellpadding="10" border="0" cellspacing="0">
+      <tr>
+        <td class="header" colspan="2">Reservation Details</td>
+      </tr>
+      <tr>
+        <td>Full Name :</td>
+        <td><span id="full_name"></span></td>
+      </tr>
+      <tr>
+        <td>Email :</td>
+        <td><span id="email"></span></td>
+      </tr>
+      <tr>
+        <td>Select Tour Package :</td>
+        <td><span id="TPackage"></span></td>
+      </tr>
+      <tr>
+        <td>Arrival Date :</td>
+        <td><span id="date"></span></td>
+      </tr>
+      <tr>
+        <td>Number of Persons :</td>
+        <td><span id="NoP"></span></td>
+      </tr>
+      <tr>
+        <td>Packages :</td>
+        <td><span id="Packages"></span></td>
+      </tr>
+      <tr>
+        <td>Discount Code :</td>
+        <td><span id="DiscountCode"></span></td>
+      </tr>
+      <tr>
+        <td>Upload File :</td>
+        <td><span id="fileToUpload"></span></td>
+      </tr>
+      <tr>
+        <td>Terms & Conditions :</td>
+        <td><span id="terms"></span></td>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+      document.getElementById("full_name").innerText =
+        localStorage.getItem("full_name");
+      document.getElementById("email").innerText =
+        localStorage.getItem("email");
+      document.getElementById("TPackage").innerText =
+        localStorage.getItem("TPackage");
+      document.getElementById("date").innerText = localStorage.getItem("date");
+      document.getElementById("NoP").innerText = localStorage.getItem("NoP");
+      document.getElementById("Packages").innerText =
+        localStorage.getItem("Packages");
+      document.getElementById("DiscountCode").innerText =
+        localStorage.getItem("DiscountCode");
+      document.getElementById("fileToUpload").innerText =
+        localStorage.getItem("fileToUpload");
+      document.getElementById("terms").innerText =
+        localStorage.getItem("terms");
+    </script>
+  </body>
+</html>
