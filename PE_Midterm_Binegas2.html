@@ -51,21 +51,6 @@
       }
     </style>
     <script type="text/javascript">
-      function validateForm(event) {
-        var requiredFields = document.querySelectorAll("[required]");
-        var isValid = true;
-        for (var i = 0; i < requiredFields.length; i++) {
-          if (requiredFields[i].value.trim() === "") {
-            isValid = false;
-            break;
-          }
-        }
-        if (!isValid) {
-          event.preventDefault();
-          alert("Please fill in all required fields.");
-        }
-      }
-
       function addtext() {
         var fname = document.myform.full_name.value;
         var email = document.myform.email.value;
@@ -79,6 +64,20 @@
         if (document.getElementById("agree").checked) terms = "I agree";
         else if (document.getElementById("disagree").checked)
           terms = "I disagree";
+
+        if (
+          fname === "" ||
+          email === "" ||
+          tour === "default_Location" ||
+          date === "" ||
+          number === "default_NoP" ||
+          packages === "default_NoP" ||
+          terms === ""
+        ) {
+          // Required fields are not filled, show an error message or perform any other desired action
+          alert("Please fill in all required fields.");
+          return false;
+        }
 
         localStorage.setItem("full_name", fname);
         localStorage.setItem("email", email);
@@ -174,9 +173,9 @@
           <td colspan="2">
             <input
               class="submit_button"
-              type="submit"
+              type="button"
               value="Complete Reservation"
-              onclick="validateForm(event)"
+              onclick="addtext()"
             />
             <input class="submit_button" type="reset" value="Reset" />
           </td>
