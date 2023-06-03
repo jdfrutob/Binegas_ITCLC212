@@ -113,6 +113,7 @@ h2 {
 }
 #author h1 {
   font-size: 25px;
+  text-align: center;
 }
 .wrapper {
   display: flex;
