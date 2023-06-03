@@ -51,6 +51,21 @@
       }
     </style>
     <script type="text/javascript">
+      function validateForm(event) {
+        var requiredFields = document.querySelectorAll("[required]");
+        var isValid = true;
+        for (var i = 0; i < requiredFields.length; i++) {
+          if (requiredFields[i].value.trim() === "") {
+            isValid = false;
+            break;
+          }
+        }
+        if (!isValid) {
+          event.preventDefault();
+          alert("Please fill in all required fields.");
+        }
+      }
+
       function addtext() {
         var fname = document.myform.full_name.value;
         var email = document.myform.email.value;
@@ -159,9 +174,9 @@
           <td colspan="2">
             <input
               class="submit_button"
-              type="button"
+              type="submit"
               value="Complete Reservation"
-              onclick="addtext()"
+              onclick="validateForm(event)"
             />
             <input class="submit_button" type="reset" value="Reset" />
           </td>
