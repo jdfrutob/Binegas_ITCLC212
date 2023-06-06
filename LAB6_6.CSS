@@ -1,0 +1,113 @@
+body {
+  font-family: poppins;
+  margin-left: 1.5in;
+  margin-right: 1.5in;
+}
+
+#content-box {
+  border: 3px solid #e2a165;
+  padding: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: auto;
+  border: 3px solid #da7d27;
+  border-radius: 20%;
+  float: right;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background-color: #f4f0ea;
+  opacity: 100%;
+  background-image: linear-gradient(#e6e2d9 1.3px, transparent 1.3px),
+    linear-gradient(to right, #e6e2d9 1.3px, #f4f0ea 1.3px);
+  background-size: 26px 26px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  color: #da7d27;
+}
+
+a {
+  color: #da7d27;
+}
+
+a:hover {
+  color: #da7d27;
+}
+
+table {
+  background-image: url("https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/352036291_223780690441529_7367829816287473364_n.jpg?stp=dst-jpg_s720x720&_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGtcLjFmwDLlNZ0ld6w4cCqVOx1Z47W3pFU7HVnjtbekd7qa517Bg-1EXR1ybrvLTFDclHKux0cqlc29glDMX3y&_nc_ohc=bJd7Td4F8OIAX-_ulv0&_nc_ht=scontent.fmnl25-4.fna&oh=00_AfBirgoX3tL2P_vqEqoclPcnP4MQ9AUSkh7DXgHuh0eJAg&oe=64823A2D");
+}
+
+img {
+  float: right;
+  margin-left: 70px;
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0.5) !important;
+}
+
+@media screen and (orientation: portrait) {
+  #content-box {
+    width: 300px;
+    text-align: center;
+  }
+}
+
+.social-icons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-icons a {
+  color: #da7d27;
+  text-decoration: none;
+  margin-right: 10px;
+}
+.input {
+  font-weight: light;
+  color: #da7d27;
+  background-color: #ecebe7;
+  font-family: poppins;
+}
+.submit_button {
+  text-align: center;
+  border-radius: 15px;
+  font-family: poppins;
+  border: 0;
+  color: #ecebe7;
+  background-color: #da7d27;
+  padding: 10px 10px;
+  width: auto;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  text-align: center;
+}
+textarea {
+    font-family: poppins;
+    color: #f08b6f;
+    font-size: 10pt;
+    font-style: normal;
+    font-weight: light;
+    background-color: #feefc6;
+    border-collapse: collapse;
+    width: 190px;
+    height: 100px;
+  }
