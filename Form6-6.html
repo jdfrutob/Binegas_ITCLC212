@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LAB Act 6_6_2023</title>
+    <link rel="stylesheet" href="LAB6_6.css" />
+    <script src="LAB6_6.js"></script>
+  </head>
+  <div id="content-box">
+    <form
+      action=""
+      name="myForm"
+      onsubmit="return validateForm();"
+      method="post"
+    >
+      <table align="center" cellpadding="10" class="content-box">
+        <!----- Name ---------------------------------------------------------->
+        <tr>
+          <td>Name :</td>
+          <td>
+            <input class="input" type="text" name="Name" maxlength="60" />
+          </td>
+        </tr>
+        <!----- Address ---------------------------------------------------------->
+        <tr>
+          <td>Address :</td>
+          <td>
+            <input class="input" type="text" name="Address" maxlength="60" />
+          </td>
+        </tr>
+        <!----- Email Address ---------------------------------------------------------->
+        <tr>
+          <td>Email Address :</td>
+          <td>
+            <input
+              class="input"
+              type="text"
+              name="Email_Address"
+              maxlength="60"
+            />
+          </td>
+        </tr>
+        <!----- Password ----------------------------------------------------------->
+        <tr>
+          <td>Password :</td>
+          <td>
+            <input
+              class="input"
+              type="password"
+              name="Password"
+              maxlength="15"
+            />
+          </td>
+        </tr>
+        <!----- Phone Number ----------------------------------------------------------->
+        <tr>
+          <td>Phone Number :</td>
+          <td>
+            <input
+              class="input"
+              type="text"
+              name="phoneNumber"
+              maxlength="11"
+            />
+          </td>
+        </tr>
+        <!----- Course ---------------------------------------------------------->
+        <tr>
+          <td>Select Your Course :</td>
+          <td>
+            <select name="Course" class="input">
+              <option value="" selected disabled>Select a course</option>
+              <option value="BSCS">BSCS</option>
+              <option value="BSIT">BSIT</option>
+              <option value="BSE">BSE - EM</option>
+              <option value="BSE">BSE - GDD</option>
+            </select>
+          </td>
+        </tr>
+        <!----- Comment ---------------------------------------------------------->
+        <tr>
+          <td>Comments :</td>
+          <td>
+            <textarea class="input" name="comment" cols="30" rows="10">
+Enter Comments Here.</textarea
+            >
+          </td>
+        </tr>
+
+        <!----- Submit and Reset ------------------------------------------------->
+        <tr>
+          <td colspan="2" align="center">
+            <input
+              class="submit_button"
+              type="submit"
+              value="Submit"
+              onclick="submitForm()"
+            />
+            <input
+              class="reset_button"
+              type="reset"
+              value="Reset"
+              onclick="resetForm()"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</html>

@@ -48,10 +48,6 @@ a:hover {
   color: #da7d27;
 }
 
-table {
-  background-image: url("https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/352036291_223780690441529_7367829816287473364_n.jpg?stp=dst-jpg_s720x720&_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGtcLjFmwDLlNZ0ld6w4cCqVOx1Z47W3pFU7HVnjtbekd7qa517Bg-1EXR1ybrvLTFDclHKux0cqlc29glDMX3y&_nc_ohc=bJd7Td4F8OIAX-_ulv0&_nc_ht=scontent.fmnl25-4.fna&oh=00_AfBirgoX3tL2P_vqEqoclPcnP4MQ9AUSkh7DXgHuh0eJAg&oe=64823A2D");
-}
-
 img {
   float: right;
   margin-left: 70px;
@@ -101,13 +97,16 @@ li {
   text-align: center;
 }
 textarea {
-    font-family: poppins;
-    color: #f08b6f;
-    font-size: 10pt;
-    font-style: normal;
-    font-weight: light;
-    background-color: #feefc6;
-    border-collapse: collapse;
-    width: 190px;
-    height: 100px;
-  }
+  font-family: poppins;
+  color: #f08b6f;
+  font-size: 10pt;
+  font-style: normal;
+  font-weight: light;
+  background-color: #feefc6;
+  border-collapse: collapse;
+  width: 190px;
+  height: 100px;
+}
+.left {
+  text-align: left;
+}

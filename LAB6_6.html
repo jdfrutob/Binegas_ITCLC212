@@ -13,44 +13,98 @@
     <body onload="document.registration.userid.focus();">
       <h1 text-align="center">Registration Form</h1>
       <form name="registration" onSubmit="return formValidation();">
-        <ul>
-          <li>
-            <label for="userid">First Name :</label> &nbsp;
-            <input type="text" name="Fname" size="25" class="input" />
-          </li>
-          <br />
-          <li>
-            <label for="userid">Last Name :</label> &nbsp;
-            <input type="text" name="LName" size="25" class="input" />
-          </li>
-          <br />
-          <li>
-            <label for="userid">Email :</label> &nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-            <input type="text" name="Email" size="25" class="input" />
-          </li>
-          <br />
-          <li>
-            <label for="passid">Password :</label> &nbsp;
-            <input type="password" name="pass" size="25" class="input" />
-          </li>
-          <br />
-          <li>
-            <label for="passid">Confirm Password :</label> &nbsp;
-            <input type="password" name="cpass" size="25" class="input" />
-          </li>
-          <br />
-          <li>
-            <label for="DoB">Date of Birth :</label> &nbsp;
-            <input type="date" name="DoB" size="25" class="input" />
-          </li>
-        </ul>
-        <input
-          type="submit"
-          name="submit"
-          value="Submit"
-          class="submit_button"
-        />
+        <table  cellpadding="10">
+          <!----- Name ---------------------------------------------------------->
+          <tr>
+            <td class="left">Name :</td>
+            <td>
+              <input class="input" type="text" name="Name" maxlength="60" size="30" />
+            </td>
+          </tr>
+          <!----- Address ---------------------------------------------------------->
+          <tr>
+            <td class="left"">Address :</td>
+            <td>
+              <input class="input" type="text" name="Address" maxlength="60" />
+            </td>
+          </tr>
+          <!----- Email Address ---------------------------------------------------------->
+          <tr>
+            <td class="left"">Email Address :</td>
+            <td>
+              <input
+                class="input"
+                type="text"
+                name="Email_Address"
+                maxlength="60"
+              />
+            </td>
+          </tr>
+          <!----- Password ----------------------------------------------------------->
+          <tr>
+            <td class="left">Password :</td>
+            <td>
+              <input
+                class="input"
+                type="password"
+                name="Password"
+                maxlength="15"
+              />
+            </td>
+          </tr>
+          <!----- Phone Number ----------------------------------------------------------->
+          <tr>
+            <td class="left">Phone Number :</td>
+            <td>
+              <input
+                class="input"
+                type="text"
+                name="phoneNumber"
+                maxlength="11"
+              />
+            </td>
+          </tr>
+          <!----- Course ---------------------------------------------------------->
+          <tr>
+            <td class="left"">Select Your Course :</td>
+            <td>
+              <select name="Course" class="input">
+                <option value="" selected disabled>Select a course</option>
+                <option value="BSCS">BSCS</option>
+                <option value="BSIT">BSIT</option>
+                <option value="BSE">BSE - EM</option>
+                <option value="BSE">BSE - GDD</option>
+              </select>
+            </td>
+          </tr>
+          <!----- Comment ---------------------------------------------------------->
+          <tr>
+            <td class="left">Comments :</td>
+            <td>
+              <textarea class="input" name="comment" cols="30" rows="10">
+  Enter Comments Here.</textarea
+              >
+            </td>
+          </tr>
+
+          <!----- Submit and Reset ------------------------------------------------->
+          <tr>
+            <td colspan="2" align="center">
+              <input
+                class="submit_button"
+                type="submit"
+                value="Submit"
+                onclick="submitForm()"
+              />
+              <input
+                class="submit_button"
+                type="reset"
+                value="Reset"
+                onclick="resetForm()"
+              />
+            </td>
+          </tr>
+        </table>
       </form>
     </body>
   </div>
