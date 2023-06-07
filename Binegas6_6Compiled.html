@@ -312,7 +312,7 @@
       </form>
     </div>
     <script>
-      function formValidation() {
+       function formValidation() {
         var studentNumber = document.registration.StudentNumber.value;
         var name = document.registration.Name.value;
         var address = document.registration.Address.value;
@@ -323,11 +323,12 @@
         var schedule = document.registration.Schedule.value;
         var phoneNumber = document.registration.phoneNumber.value;
         var password = document.registration.Password.value;
-        var confirmPassword = document.registration.VerifyPassword.value;
+        var confirmPassword = document.registration.confirmPassword.value;
         var dateOfBirth = document.registration.date.value;
         var fileToUpload = document.registration.fileToUpload.value;
         var enrollmentDate = document.registration.EnrollmentDate.value;
         var notes = document.registration.comment.value;
+
 
         if (
           studentNumber === "" ||
@@ -406,9 +407,10 @@
       }
 
       function isValidAddress(address) {
-        return true;
+        const regex = /^[a-zA-Z0-9 ]+$/;
+        return regex.test(address);
       }
-
+      
       function isValidZipCode(zipCode) {
         return /^\d{5}$/.test(zipCode);
       }
