@@ -87,7 +87,13 @@ img {
   background-color: #da7d27;
   padding: 10px 10px;
   width: auto;
+  transition: background-color 0.3s ease; 
 }
+
+.submit_button:hover {
+  background-color: #ce6402; 
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -139,6 +145,7 @@ textarea {
   background-color: #da7d27;
   padding: 10px 10px;
   width: auto;
+  transition: background-color 0.3s ease; 
 }
 
 .custom-upload-button:hover {
