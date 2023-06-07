@@ -79,7 +79,7 @@ function isValidStudentNumber(studentNumber) {
   if (
     typeof studentNumber !== "string" ||
     !/^\d+$/.test(studentNumber) ||
-    studentNumber.length !== 9
+    studentNumber.length !== 11
   ) {
     return false;
   }
