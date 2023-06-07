@@ -81,6 +81,7 @@ img {
   text-align: center;
   border-radius: 15px;
   font-family: poppins;
+  font-size: small;
   border: 0;
   color: #ecebe7;
   background-color: #da7d27;
@@ -109,4 +110,44 @@ textarea {
 }
 .left {
   text-align: left;
+}
+.right {
+  text-align: right;
+}
+.right-align {
+  text-align: right;
+}
+.file-upload-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.file-upload-container input[type="file"] {
+  margin-left: 10px;
+}
+.upload-container {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-upload-button {
+  font-size: x-small;
+  text-align: center;
+  border-radius: 15px;
+  font-family: poppins;
+  border: 0;
+  color: #ecebe7;
+  background-color: #da7d27;
+  padding: 10px 10px;
+  width: auto;
+}
+
+.custom-upload-button:hover {
+  background-color:#ce6402;
+}
+
+.upload-container input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }

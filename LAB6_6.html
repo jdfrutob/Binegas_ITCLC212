@@ -9,67 +9,63 @@
     <link rel="stylesheet" href="LAB6_6.css" />
     <script src="LAB6_6.js"></script>
   </head>
-  <div id="content-box">
-    <body onload="document.registration.userid.focus();">
-      <h1 text-align="center">Registration Form</h1>
+  <body onload="document.registration.userid.focus();">
+    <div id="content-box">
+      <h1 style="text-align: center">Registration Form</h1>
       <form name="registration" onSubmit="return formValidation();">
-        <table  cellpadding="10">
-          <!----- Name ---------------------------------------------------------->
+        <table cellpadding="10" align="center">
+          <tr>
+            <td class="left">Student Number :</td>
+            <td class="right">
+              <input class="input" type="text" name="StudentNumber" size="25" />
+            </td>
+          </tr>
           <tr>
             <td class="left">Name :</td>
-            <td>
-              <input class="input" type="text" name="Name" maxlength="60" size="30" />
+            <td class="right">
+              <input class="input" type="text" name="Name" size="25" />
             </td>
           </tr>
-          <!----- Address ---------------------------------------------------------->
           <tr>
-            <td class="left"">Address :</td>
-            <td>
-              <input class="input" type="text" name="Address" maxlength="60" />
+            <td class="left">Address :</td>
+            <td class="right">
+              <input class="input" type="text" name="Address" size="25" />
             </td>
           </tr>
-          <!----- Email Address ---------------------------------------------------------->
           <tr>
-            <td class="left"">Email Address :</td>
-            <td>
-              <input
-                class="input"
-                type="text"
-                name="Email_Address"
-                maxlength="60"
-              />
+            <td class="left">Zip Code :</td>
+            <td class="right">
+              <input class="input" type="text" name="Zip" size="25" />
             </td>
           </tr>
-          <!----- Password ----------------------------------------------------------->
           <tr>
-            <td class="left">Password :</td>
-            <td>
-              <input
-                class="input"
-                type="password"
-                name="Password"
-                maxlength="15"
-              />
+            <td class="left">City :</td>
+            <td class="right">
+              <select name="City" class="input">
+                <option value="" selected disabled>Please Select</option>
+                <option value="QC">Quezon City</option>
+                <option value="Mnl">Manila City</option>
+                <option value="Pas">Pasig City</option>
+                <option value="Mal">Malabon City</option>
+              </select>
             </td>
           </tr>
-          <!----- Phone Number ----------------------------------------------------------->
           <tr>
-            <td class="left">Phone Number :</td>
-            <td>
-              <input
-                class="input"
-                type="text"
-                name="phoneNumber"
-                maxlength="11"
-              />
+            <td class="left">Gender :</td>
+            <td class="right">
+              <select name="Gender" class="input">
+                <option value="" selected disabled>Please Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Oth">Other</option>
+              </select>
             </td>
           </tr>
-          <!----- Course ---------------------------------------------------------->
           <tr>
-            <td class="left"">Select Your Course :</td>
-            <td>
+            <td class="left">Course :</td>
+            <td class="right">
               <select name="Course" class="input">
-                <option value="" selected disabled>Select a course</option>
+                <option value="" selected disabled>Please Select</option>
                 <option value="BSCS">BSCS</option>
                 <option value="BSIT">BSIT</option>
                 <option value="BSE">BSE - EM</option>
@@ -77,17 +73,69 @@
               </select>
             </td>
           </tr>
-          <!----- Comment ---------------------------------------------------------->
           <tr>
-            <td class="left">Comments :</td>
-            <td>
-              <textarea class="input" name="comment" cols="30" rows="10">
-  Enter Comments Here.</textarea
-              >
+            <td class="left">Schedule :</td>
+            <td class="right">
+              <select name="Schedule" class="input">
+                <option value="" selected disabled>Please Select</option>
+                <option value="M">Morning Class</option>
+                <option value="A">Afternoon Class</option>
+                <option value="E">Evening Class</option>
+              </select>
             </td>
           </tr>
-
-          <!----- Submit and Reset ------------------------------------------------->
+          <tr>
+            <td class="left">Phone Number :</td>
+            <td class="right">
+              <input class="input" type="text" name="phoneNumber" size="25" />
+            </td>
+          </tr>
+          <tr>
+            <td class="left">Password :</td>
+            <td class="right">
+              <input class="input" type="password" name="Password" size="25" />
+            </td>
+          </tr>
+          <tr>
+            <td class="left">Verify Password :</td>
+            <td class="right">
+              <input class="input" type="password" name="Password" size="25" />
+            </td>
+          </tr>
+          <tr>
+            <td class="left">Birthday :</td>
+            <td class="right">
+              <input type="date" name="date" class="input" required />
+            </td>
+          </tr>
+          <tr>
+            <td class="left">Upload File :</td>
+            <td class="right-align">
+              <div class="upload-container">
+                <input type="file" name="fileToUpload" id="fileToUpload" />
+                <label for="fileToUpload" class="custom-upload-button"
+                  >Choose File</label
+                >
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="left">Enrollment Date :</td>
+            <td class="right">
+              <input type="date" name="date" class="input" required />
+            </td>
+          </tr>
+          <tr>
+            <td class="left">Notes :</td>
+            <td class="right">
+              <textarea
+                class="input"
+                name="comment"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </td>
+          </tr>
           <tr>
             <td colspan="2" align="center">
               <input
@@ -106,6 +154,6 @@
           </tr>
         </table>
       </form>
-    </body>
-  </div>
+    </div>
+  </body>
 </html>

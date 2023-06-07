@@ -1,18 +1,36 @@
 function formValidation() {
-  var firstName = document.registration.Fname.value;
-  var lastName = document.registration.LName.value;
-  var email = document.registration.Email.value;
-  var password = document.registration.pass.value;
-  var confirmPassword = document.registration.cpass.value;
-  var dateOfBirth = document.registration.DoB.value;
+  var studentNumber = document.registration.StudentNumber.value;
+  var name = document.registration.Name.value;
+  var address = document.registration.Address.value;
+  var zipCode = document.registration.Zip.value;
+  var city = document.registration.City.value;
+  var gender = document.registration.Gender.value;
+  var course = document.registration.Course.value;
+  var schedule = document.registration.Schedule.value;
+  var phoneNumber = document.registration.phoneNumber.value;
+  var password = document.registration.Password.value;
+  var confirmPassword = document.registration.VerifyPassword.value;
+  var dateOfBirth = document.registration.date.value;
+  var fileToUpload = document.registration.fileToUpload.value;
+  var enrollmentDate = document.registration.EnrollmentDate.value;
+  var notes = document.registration.comment.value;
 
   if (
-    firstName === "" ||
-    lastName === "" ||
-    email === "" ||
+    studentNumber === "" ||
+    name === "" ||
+    address === "" ||
+    zipCode === "" ||
+    city === "" ||
+    gender === "" ||
+    course === "" ||
+    schedule === "" ||
+    phoneNumber === "" ||
     password === "" ||
     confirmPassword === "" ||
-    dateOfBirth === ""
+    dateOfBirth === "" ||
+    fileToUpload === "" ||
+    enrollmentDate === "" ||
+    notes === ""
   ) {
     alert("Please fill in all fields");
     return false;
@@ -25,16 +43,24 @@ function formValidation() {
 
   var alerts = [];
 
-  if (!isValidFirstName(firstName)) {
-    alerts.push("Invalid First Name");
+  if (!isValidStudentNumber(studentNumber)) {
+    alerts.push("Invalid Student Number");
   }
 
-  if (!isValidLastName(lastName)) {
-    alerts.push("Invalid Last Name");
+  if (!isValidName(name)) {
+    alerts.push("Invalid Name");
   }
 
-  if (!isValidEmail(email)) {
-    alerts.push("Invalid Email");
+  if (!isValidAddress(address)) {
+    alerts.push("Invalid Address");
+  }
+
+  if (!isValidZipCode(zipCode)) {
+    alerts.push("Invalid Zip Code");
+  }
+
+  if (!isValidPhoneNumber(phoneNumber)) {
+    alerts.push("Invalid Phone Number");
   }
 
   if (!isValidPassword(password)) {
@@ -51,18 +77,38 @@ function formValidation() {
   return true;
 }
 
-function isValidFirstName(firstName) {
-  return firstName.length >= 2;
+  function isValidStudentNumber(studentNumber) {
+    if (studentNumber.length !== 9) {
+      return false;
+    }
+    return true;
+  }
+
+  function isValidName(name) {
+    const regex = /^[a-zA-Z ]+$/;
+    return regex.test(name);
+  }
+  
+
+function isValidAddress(address) {
+  return true;
 }
 
-function isValidLastName(lastName) {
-  return lastName.length >= 2;
+function isValidZipCode(zipCode) {
+  if (zipCode.length !== 5) {
+    return false;
+  }
+  return true;
 }
 
-function isValidEmail(email) {
-  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailPattern.test(email);
+function isValidPhoneNumber(phoneNumber) {
+  if (phoneNumber.length !== 11) {
+    return false;
+    
+  }
+  return true;
 }
+
 function isValidPassword(password) {
   const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,15}$/;
   return passwordPattern.test(password);
