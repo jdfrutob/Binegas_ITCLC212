@@ -68,48 +68,55 @@ function formValidation() {
   }
 
   if (alerts.length > 0) {
-    for (var i = 0; i < alerts.length; i++) {
-      alert(alerts[i]);
-    }
+    alert(alerts.join("\n"));
     return false;
   }
 
   return true;
 }
 
-  function isValidStudentNumber(studentNumber) {
-    if (studentNumber.length !== 9) {
-      return false;
-    }
-    return true;
+function isValidStudentNumber(studentNumber) {
+  if (
+    typeof studentNumber !== "string" ||
+    !/^\d+$/.test(studentNumber) ||
+    studentNumber.length !== 9
+  ) {
+    return false;
   }
+  return true;
+}
 
-  function isValidName(name) {
-    const regex = /^[a-zA-Z ]+$/;
-    return regex.test(name);
-  }
-  
+function isValidName(name) {
+  const regex = /^[a-zA-Z ]+$/;
+  return regex.test(name);
+}
 
 function isValidAddress(address) {
   return true;
 }
 
 function isValidZipCode(zipCode) {
-  if (zipCode.length !== 5) {
-    return false;
-  }
-  return true;
+  return /^\d{5}$/.test(zipCode);
 }
 
 function isValidPhoneNumber(phoneNumber) {
-  if (phoneNumber.length !== 11) {
-    return false;
-    
-  }
-  return true;
+  const regex = /^\d{11}$/;
+  return regex.test(phoneNumber);
 }
 
 function isValidPassword(password) {
   const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,15}$/;
   return passwordPattern.test(password);
 }
+
+var form = document.forms.registration;
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  var isValid = formValidation();
+  if (!isValid) {
+    alert("Please fill in all fields");
+  } else {
+    form.submit();
+  }
+});
