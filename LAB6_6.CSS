@@ -87,7 +87,7 @@ img {
   background-color: #da7d27;
   padding: 10px 10px;
   width: auto;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease-in-out; 
 }
 
 .submit_button:hover {
@@ -145,7 +145,7 @@ textarea {
   background-color: #da7d27;
   padding: 10px 10px;
   width: auto;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease-in-out; 
 }
 
 .custom-upload-button:hover {
