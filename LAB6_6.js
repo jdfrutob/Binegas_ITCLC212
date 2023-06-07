@@ -9,7 +9,7 @@ function formValidation() {
   var schedule = document.registration.Schedule.value;
   var phoneNumber = document.registration.phoneNumber.value;
   var password = document.registration.Password.value;
-  var confirmPassword = document.registration.VerifyPassword.value;
+  var confirmPassword = document.registration.confirmPassword.value;
   var dateOfBirth = document.registration.date.value;
   var fileToUpload = document.registration.fileToUpload.value;
   var enrollmentDate = document.registration.EnrollmentDate.value;
@@ -92,7 +92,8 @@ function isValidName(name) {
 }
 
 function isValidAddress(address) {
-  return true;
+  const regex = /^[a-zA-Z0-9 ]+$/;
+  return regex.test(address);
 }
 
 function isValidZipCode(zipCode) {
