@@ -9,7 +9,7 @@ const H = (dom_canvas.height = 400);
 
 let snake,
   food,
-  currentHue,
+  currentHue = 0,
   cells = 20,
   cellSize,
   isGameOver = false,
@@ -72,7 +72,7 @@ let helpers = {
     }
   },
   randHue() {
-    return ~~(Math.random() * 360);
+    return currentHue;
   },
   hsl2rgb(hue, saturation, lightness) {
     if (hue == undefined) {
@@ -168,7 +168,7 @@ class Snake {
     this.index = i;
     this.delay = 5;
     this.size = W / cells;
-    this.color = "white";
+    this.color = "#F5EFE7";
     this.history = [];
     this.total = 1;
   }
@@ -260,9 +260,9 @@ class Food {
   draw() {
     let { x, y } = this.pos;
     CTX.globalCompositeOperation = "lighter";
-    CTX.shadowBlur = 20;
+    CTX.shadowBlur = 0;
     CTX.shadowColor = this.color;
-    CTX.fillStyle = this.color;
+    CTX.fillStyle = '#dda67f';
     CTX.fillRect(x, y, this.size, this.size);
     CTX.globalCompositeOperation = "source-over";
     CTX.shadowBlur = 0;
@@ -283,7 +283,7 @@ class Food {
 class Particle {
   constructor(pos, color, size, vel) {
     this.pos = pos;
-    this.color = color;
+    this.color = '#dda67f';
     this.size = Math.abs(size / 2);
     this.ttl = 0;
     this.gravity = -0.2;
@@ -301,7 +301,7 @@ class Particle {
     CTX.shadowColor = `rgb(${r},${g},${b},${1})`;
     CTX.shadowBlur = 0;
     CTX.globalCompositeOperation = "lighter";
-    CTX.fillStyle = `rgb(${r},${g},${b},${1})`;
+    CTX.fillStyle = '#dda67f'; 
     CTX.fillRect(x, y, this.size, this.size);
     CTX.globalCompositeOperation = "source-over";
   }
@@ -363,7 +363,7 @@ function gameOver() {
   maxScore ? null : (maxScore = score);
   score > maxScore ? (maxScore = score) : null;
   window.localStorage.setItem("maxScore", maxScore);
-  CTX.fillStyle = "#4cffd7";
+  CTX.fillStyle = "#dda67f"; // Changed color to #dda67f
   CTX.textAlign = "center";
   CTX.font = "bold 30px Poppins, sans-serif";
   CTX.fillText("GAME OVER", W / 2, H / 2);
@@ -371,6 +371,7 @@ function gameOver() {
   CTX.fillText(`SCORE   ${score}`, W / 2, H / 2 + 60);
   CTX.fillText(`MAXSCORE   ${maxScore}`, W / 2, H / 2 + 80);
 }
+
 
 function reset() {
   dom_score.innerText = "00";
