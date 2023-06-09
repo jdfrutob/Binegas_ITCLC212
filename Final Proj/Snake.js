@@ -55,8 +55,9 @@ let helpers = {
     }
   },
   drawGrid() {
+    CTX.globalAlpha = 0.8;
     CTX.lineWidth = 1.1;
-    CTX.strokeStyle = "#232332";
+    CTX.strokeStyle = "#29426a"; 
     CTX.shadowBlur = 0;
     for (let i = 1; i < cells; i++) {
       let f = (W / cells) * i;
@@ -71,6 +72,7 @@ let helpers = {
       CTX.closePath();
     }
   },
+
   randHue() {
     return currentHue;
   },
@@ -262,7 +264,7 @@ class Food {
     CTX.globalCompositeOperation = "lighter";
     CTX.shadowBlur = 0;
     CTX.shadowColor = this.color;
-    CTX.fillStyle = '#dda67f';
+    CTX.fillStyle = "#dda67f";
     CTX.fillRect(x, y, this.size, this.size);
     CTX.globalCompositeOperation = "source-over";
     CTX.shadowBlur = 0;
@@ -283,7 +285,7 @@ class Food {
 class Particle {
   constructor(pos, color, size, vel) {
     this.pos = pos;
-    this.color = '#dda67f';
+    this.color = "#dda67f";
     this.size = Math.abs(size / 2);
     this.ttl = 0;
     this.gravity = -0.2;
@@ -301,7 +303,7 @@ class Particle {
     CTX.shadowColor = `rgb(${r},${g},${b},${1})`;
     CTX.shadowBlur = 0;
     CTX.globalCompositeOperation = "lighter";
-    CTX.fillStyle = '#dda67f'; 
+    CTX.fillStyle = "#dda67f";
     CTX.fillRect(x, y, this.size, this.size);
     CTX.globalCompositeOperation = "source-over";
   }
@@ -371,7 +373,6 @@ function gameOver() {
   CTX.fillText(`SCORE   ${score}`, W / 2, H / 2 + 60);
   CTX.fillText(`MAXSCORE   ${maxScore}`, W / 2, H / 2 + 80);
 }
-
 
 function reset() {
   dom_score.innerText = "00";
