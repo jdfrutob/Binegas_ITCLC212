@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="calc.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <h1 class="calculator-title">Calculator</h1>
+      <div id="memory" class="calculator-history"></div>
+      <input type="text" id="display" class="calculator-display" />
+      <div class="calculator-buttons">
+        <div class="calculator-row">
+          <button class="calculator-button" onclick="clearEntry()">CE</button>
+          <button class="calculator-button" onclick="clearDisplay()">C</button>
+        </div>
+        <div class="calculator-row">
+          <button class="calculator-button" onclick="appendValue('/')">
+            ÷
+          </button>
+          <button class="calculator-button" onclick="appendValue('7')">
+            7
+          </button>
+          <button class="calculator-button" onclick="appendValue('8')">
+            8
+          </button>
+          <button class="calculator-button" onclick="appendValue('9')">
+            9
+          </button>
+        </div>
+        <div class="calculator-row">
+          <button class="calculator-button" onclick="appendValue('*')">
+            ×
+          </button>
+          <button class="calculator-button" onclick="appendValue('4')">
+            4
+          </button>
+          <button class="calculator-button" onclick="appendValue('5')">
+            5
+          </button>
+          <button class="calculator-button" onclick="appendValue('6')">
+            6
+          </button>
+        </div>
+        <div class="calculator-row">
+          <button class="calculator-button" onclick="appendValue('-')">
+            -
+          </button>
+          <button class="calculator-button" onclick="appendValue('1')">
+            1
+          </button>
+          <button class="calculator-button" onclick="appendValue('2')">
+            2
+          </button>
+          <button class="calculator-button" onclick="appendValue('3')">
+            3
+          </button>
+        </div>
+        <div class="calculator-row">
+          <button class="calculator-button" onclick="appendValue('+')">
+            +
+          </button>
+          <button class="calculator-button" onclick="appendValue('0')">
+            0
+          </button>
+          <button class="calculator-button" onclick="appendValue('.')">
+            .
+          </button>
+          <button class="calculator-button" onclick="calculate()">=</button>
+        </div>
+      </div>
+      <p class="calculator-footer">
+        Made by : <i class="fab fa-github" onclick="openLink('https://github.com/jdfrutob')"></i>
+      </p>
+    </div>
+    <script src="calc.js"></script>
+  </body>
+</html>
