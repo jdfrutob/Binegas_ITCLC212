@@ -22,7 +22,7 @@ function calculate() {
     result = eval(expression);
     memory.innerHTML += expression + " = " + result + "<br>";
   } catch (error) {
-    alert("Erro ao calcular. Verifique a expressão.");
+    alert("Error calculating. Check the expression.");
     result = "";
   }
 
