@@ -87,7 +87,28 @@
         word-break: break-all;
         text-align: center;
       }
+      .icons {
+        width: 180px;
+        margin: 0 auto 10px;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+      }
+
+      .icons i {
+        cursor: pointer;
+        padding: 5px;
+        font-size: 18px;
+        transition: 0.2s;
+      }
+      .icons i:hover {
+        color: #d8c4b6;
+      }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -126,6 +147,24 @@
       </div>
       <div>
         <p id="result" class="result"></p>
+      </div>
+      <div class="icons">
+        <i
+          class="fab fa-github"
+          onclick="openLink('https://github.com/jdfrutob')"
+        ></i>
+        <i
+          class="fab fa-linkedin"
+          onclick="openLink('https://www.linkedin.com/in/jd-bi%C3%B1egas/')"
+        ></i>
+        <i
+          class="fab fa-facebook-messenger"
+          onclick="openLink('https://m.me/Binegasfor3')"
+        ></i>
+        <i
+          class="fab fa-discord"
+          onclick="openLink('https://discordapp.com/users/Jdddddddd#3073')"
+        ></i>
       </div>
     </div>
     <script>
@@ -190,6 +229,9 @@
           days +
           " days old.";
         document.getElementById("result").textContent = result;
+      }
+      function openLink(url) {
+        window.open(url, "_blank");
       }
     </script>
   </body>
