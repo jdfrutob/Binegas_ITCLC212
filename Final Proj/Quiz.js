@@ -89,29 +89,39 @@ const a_text = document.getElementById("a_text");
 const b_text = document.getElementById("b_text");
 const c_text = document.getElementById("c_text");
 const d_text = document.getElementById("d_text");
-const e_text = document.getElementById("e_text");
-const f_text = document.getElementById("f_text");
-const g_text = document.getElementById("g_text");
-const h_text = document.getElementById("h_text");
-const i_text = document.getElementById("i_text");
-const j_text = document.getElementById("j_text");
 const submitBtn = document.getElementById("submit");
+const progressBar = document.getElementById("progress-bar");
+const questionCount = quizData.length;
 
 let currentQuiz = 0;
 let score = 0;
+let usedQuestions = [];
 
 loadQuiz();
 
 function loadQuiz() {
   deselectAnswers();
 
-  const currentQuizData = quizData[currentQuiz];
+  if (usedQuestions.length === questionCount) {
+    showResults();
+    return;
+  }
+
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * questionCount);
+  } while (usedQuestions.includes(randomIndex));
+
+  usedQuestions.push(randomIndex);
+  const currentQuizData = quizData[randomIndex];
 
   questionEl.innerText = currentQuizData.question;
   a_text.innerText = currentQuizData.a;
   b_text.innerText = currentQuizData.b;
   c_text.innerText = currentQuizData.c;
   d_text.innerText = currentQuizData.d;
+
+  updateProgressBar();
 }
 
 function deselectAnswers() {
@@ -126,41 +136,38 @@ function getSelected() {
       answer = answerEl.id;
     }
   });
+
   return answer;
 }
 
 submitBtn.addEventListener("click", () => {
   const answer = getSelected();
+
   if (answer) {
-    if (answer === quizData[currentQuiz].correct) {
+    if (answer === quizData[usedQuestions[currentQuiz]].correct) {
       score++;
     }
+
     currentQuiz++;
-    if (currentQuiz < quizData.length) {
+
+    if (currentQuiz < questionCount) {
       loadQuiz();
     } else {
-      quiz.innerHTML = `
-          <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-          <button onclick="location.reload()">Reload</button>
-      `;
+      showResults();
     }
   }
 });
 
+function showResults() {
+  quiz.innerHTML = `
+    <h2>You answered ${score}/${questionCount} questions correctly</h2>
+    <audio src="path/to/your/mp3/file.mp3"autoplay></audio>
+    <button onclick="location.reload()">Reload</button>
+  `;
+}
 
-const progressBar = document.getElementById("progress-bar");
-const submitButton = document.getElementById("submit");
-const questionCount = 10;
 
-let currentQuestion = 1;
 function updateProgressBar() {
-  const percent = (currentQuestion / questionCount) * 100;
+  const percent = (currentQuiz / questionCount) * 100;
   progressBar.style.width = percent + "%";
 }
-
-submitButton.addEventListener("click", function () {
-
-  currentQuestion++;
-  updateProgressBar();
-}
-);
