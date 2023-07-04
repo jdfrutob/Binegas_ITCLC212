@@ -142,7 +142,6 @@ function getSelected() {
 
 submitBtn.addEventListener("click", () => {
   const answer = getSelected();
-
   if (answer) {
     if (answer === quizData[usedQuestions[currentQuiz]].correct) {
       score++;
@@ -161,13 +160,19 @@ submitBtn.addEventListener("click", () => {
 function showResults() {
   quiz.innerHTML = `
     <h2>You answered ${score}/${questionCount} questions correctly</h2>
-    <audio src="path/to/your/mp3/file.mp3"autoplay></audio>
     <button onclick="location.reload()">Reload</button>
   `;
-  
+  if(score == 10){
+    playVictoryMusic();
+  }
 }
 
 function updateProgressBar() {
   const percent = (currentQuiz / questionCount) * 100;
   progressBar.style.width = percent + "%";
+}
+
+function playVictoryMusic(){
+  var music = new Audio('victory.mp3');
+  music.play();
 }
