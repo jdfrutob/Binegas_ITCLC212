@@ -162,7 +162,7 @@ function showResults() {
     <h2>You answered ${score}/${questionCount} questions correctly</h2>
     <button onclick="location.reload()">Reload</button>
   `;
-  if(score >8){
+  if(score >7){
     playVictoryMusic();
   }
   else{
