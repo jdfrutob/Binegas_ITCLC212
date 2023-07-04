@@ -164,8 +164,8 @@ function showResults() {
     <audio src="path/to/your/mp3/file.mp3"autoplay></audio>
     <button onclick="location.reload()">Reload</button>
   `;
+  
 }
-
 
 function updateProgressBar() {
   const percent = (currentQuiz / questionCount) * 100;
