@@ -73,3 +73,10 @@ button:focus {
   outline: none;
   background-color: #d8c4b6;
 }
+.progress-bar {
+  background-color: #f5efe7;
+  height: 20px;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
