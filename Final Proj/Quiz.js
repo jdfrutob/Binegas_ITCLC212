@@ -162,8 +162,11 @@ function showResults() {
     <h2>You answered ${score}/${questionCount} questions correctly</h2>
     <button onclick="location.reload()">Reload</button>
   `;
-  if(score == 10){
+  if(score >8){
     playVictoryMusic();
+  }
+  else{
+    playFailMusic();
   }
 }
 
@@ -174,5 +177,9 @@ function updateProgressBar() {
 
 function playVictoryMusic(){
   var music = new Audio('victory.mp3');
+  music.play();
+}
+function playFailMusic(){
+  var music = new Audio('fail.mp3');
   music.play();
 }
