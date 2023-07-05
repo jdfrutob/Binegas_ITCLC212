@@ -1,125 +1,164 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #F5EFE7;
-    color: #F5EFE7;
-    font-family: Montserrat;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 180px;
+  background-color: #f5efe7;
+  background-image: linear-gradient(#d8c4b6 1px, transparent 1px),
+    linear-gradient(to right, #d8c4b6 1px, #f5efe7 1px);
+  background-color: #f5efe7;
+  color: #f5efe7;
+  font-family: Montserrat;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 180px;
 }
 
 .container {
-    /* position: absolute; */
-    height: 300px;
-    width: 1200px;
-    display: flex;
+  /* position: absolute; */
+  height: 300px;
+  width: 1200px;
+  display: flex;
 }
 
 .card {
-    width: 350px;
-    /* padding: 15px; */
-    height: 380px;
-    background-color: #213555;
-    border-radius: 10px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
-    text-align: center;
-    transition: 0.4s ease-out;
-    position: relative;
-    left: 0px;
+  width: 350px;
+  /* padding: 15px; */
+  height: 380px;
+  background-color: #213555;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
 }
 
 .card:not(:first-child) {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .card:hover {
-    transform: translateY(-20px);
-    transition: 0.4s ease-out;
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
 }
 
-.card:hover~.card {
-    position: relative;
-    transition: 0.4s ease-out;
+.card:hover ~ .card {
+  position: relative;
+  transition: 0.4s ease-out;
 }
-
 
 .cover-photo {
-    position: relative;
-    background: url(https://i.imgur.com/jxyuizJ.jpeg);
-    background-size: cover;
-    height: 140px;
-    border-radius: 5px 5px 0 0;
+  position: relative;
+  background: url(https://i.imgur.com/jxyuizJ.jpeg);
+  background-size: cover;
+  height: 140px;
+  border-radius: 5px 5px 0 0;
 }
 
 .profile {
-    position: absolute;
-    width: 120px;
-    bottom: -60px;
-    left: 15px;
-    border-radius: 50%;
-    border: 2px solid #F5EFE7;
-    background: #F5EFE7;
-    padding: 5px;
+  position: absolute;
+  width: 120px;
+  bottom: -60px;
+  left: 15px;
+  border-radius: 50%;
+  border: 2px solid #f5efe7;
+  background: #f5efe7;
+  padding: 5px;
 }
 
 .profile-name {
-    font-size: 20px;
-    margin: 25px 0 0 120px;
-    color: #F5EFE7;
+  font-size: 20px;
+  margin: 25px 0 0 120px;
+  color: #f5efe7;
 }
 
 .about {
-    margin-top: 30px;
-    line-height: 1.6;
+  margin-top: 30px;
+  line-height: 1.6;
 }
 
 .btn {
-    margin: 30px 15px;
-    background: #F5EFE7;
-    padding: 10px 25px;
-    border-radius: 3px;
-    border: 1px solid #F5EFE7;
-    font-weight: bold;
-    font-family: Montserrat;
-    cursor: pointer;
-    color: #213555;
-    transition: 0.2s;
+  margin: 30px 15px;
+  background: #f5efe7;
+  padding: 10px 25px;
+  border-radius: 3px;
+  border: 1px solid #f5efe7;
+  font-weight: bold;
+  font-family: Montserrat;
+  cursor: pointer;
+  color: #213555;
+  transition: 0.2s;
 }
 
 .btn:last-of-type {
-    background: #F5EFE7;
-    border-color: #F5EFE7;
-    color: #213555;
+  background: #f5efe7;
+  border-color: #f5efe7;
+  color: #213555;
 }
 
 .btn:hover {
-    background: #D8C4B6;
-    color: #213555;
+  background: #d8c4b6;
+  color: #213555;
 }
 
 .icons {
-    width: 180px;
-    margin: 0 auto 10px;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
+  width: 180px;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .icons i {
-    cursor: pointer;
-    padding: 5px;
-    font-size: 18px;
-    transition: 0.2s;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
+  transition: 0.2s;
 }
 
 .icons i:hover {
-    color: #d8c4b6;
+  color: #d8c4b6;
+}
+.authors-button {
+  background-color: #f5efe7;
+  color: #213555;
+  border: #213555 solid 3px;
+  border-radius: 30px;
+  width: 200px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: width 0.5s ease-in-out;
+}
+
+.authors-button:hover {
+  background-color: #213555;
+  color: #f5efe7;
+  width: 220px;
+}
+.close-button {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 44px;
+  background-color: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: ease-in-out 0.3s;
+}
+
+.close-button:hover {
+  color: #ff0000;
 }
