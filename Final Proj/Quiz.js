@@ -34,7 +34,7 @@ const questions = [
   ),
   new question_data(
     "What is the purpose of a CSS framework?",
-    ["To create responsive web designs", "To create responsive web designs", "To execute JavaScript functions", "To connect to databases"],
+    ["To create responsive web designs", "To implement changes", "To execute JavaScript functions", "To connect to databases"],
     "a",
     null
   ),
@@ -179,14 +179,7 @@ function showQuestions() {
       const correct_answer_text = question_data.choices[choices.indexOf(question_data.correct_answer)];
       correct_answer.textContent = `Correct Answer: ${question_data.correct_answer}. ${correct_answer_text}`;
       question_div.appendChild(correct_answer);
-      
-      // const correct = document.createElement('h4');
-      // const is_correct = question_data.selected_answer === question_data.correct_answer;
-      // correct.textContent = is_correct ? 'Correct!' : 'Incorrect!'
-      // question_div.appendChild(correct);
-  
       quiz_element.appendChild(question_div);
-
       quiz_element.appendChild(document.createElement('br'));
     }
   }
