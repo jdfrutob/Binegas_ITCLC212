@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5EFE7;
+    color: #F5EFE7;
+    font-family: Montserrat;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 180px;
+}
+
+.container {
+    /* position: absolute; */
+    height: 300px;
+    width: 1200px;
+    display: flex;
+}
+
+.card {
+    width: 350px;
+    /* padding: 15px; */
+    height: 380px;
+    background-color: #213555;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+}
+
+.card:not(:first-child) {
+    margin-left: 10px;
+}
+
+.card:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+}
+
+.card:hover~.card {
+    position: relative;
+    transition: 0.4s ease-out;
+}
+
+
+.cover-photo {
+    position: relative;
+    background: url(https://i.imgur.com/jxyuizJ.jpeg);
+    background-size: cover;
+    height: 140px;
+    border-radius: 5px 5px 0 0;
+}
+
+.profile {
+    position: absolute;
+    width: 120px;
+    bottom: -60px;
+    left: 15px;
+    border-radius: 50%;
+    border: 2px solid #F5EFE7;
+    background: #F5EFE7;
+    padding: 5px;
+}
+
+.profile-name {
+    font-size: 20px;
+    margin: 25px 0 0 120px;
+    color: #F5EFE7;
+}
+
+.about {
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+.btn {
+    margin: 30px 15px;
+    background: #F5EFE7;
+    padding: 10px 25px;
+    border-radius: 3px;
+    border: 1px solid #F5EFE7;
+    font-weight: bold;
+    font-family: Montserrat;
+    cursor: pointer;
+    color: #213555;
+    transition: 0.2s;
+}
+
+.btn:last-of-type {
+    background: #F5EFE7;
+    border-color: #F5EFE7;
+    color: #213555;
+}
+
+.btn:hover {
+    background: #D8C4B6;
+    color: #213555;
+}
+
+.icons {
+    width: 180px;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.icons i {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.icons i:hover {
+    color: #d8c4b6;
+}
