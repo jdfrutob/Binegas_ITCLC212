@@ -91,11 +91,13 @@ const c_text = document.getElementById("c_text");
 const d_text = document.getElementById("d_text");
 const submitBtn = document.getElementById("submit");
 const progressBar = document.getElementById("progress-bar");
+const timerEl = document.getElementById("timer"); // Timer element
 const questionCount = quizData.length;
 
 let currentQuiz = 0;
 let score = 0;
 let usedQuestions = [];
+let timer;
 
 loadQuiz();
 
@@ -122,6 +124,8 @@ function loadQuiz() {
   d_text.innerText = currentQuizData.d;
 
   updateProgressBar();
+  resetTimer(); 
+  startTimer(); 
 }
 
 function deselectAnswers() {
@@ -143,6 +147,8 @@ function getSelected() {
 submitBtn.addEventListener("click", () => {
   const answer = getSelected();
   if (answer) {
+    stopTimer(); 
+
     if (answer === quizData[usedQuestions[currentQuiz]].correct) {
       score++;
     }
@@ -160,12 +166,11 @@ submitBtn.addEventListener("click", () => {
 function showResults() {
   quiz.innerHTML = `
     <h2>You answered ${score}/${questionCount} questions correctly</h2>
-    <button onclick="location.reload()">Reload</button>
+    <button onclick="location.href='main.html'">Reload</button>
   `;
-  if(score >7){
+  if (score > 7) {
     playVictoryMusic();
-  }
-  else{
+  } else {
     playFailMusic();
   }
 }
@@ -175,11 +180,43 @@ function updateProgressBar() {
   progressBar.style.width = percent + "%";
 }
 
-function playVictoryMusic(){
+function startTimer() {
+  let timeLeft = 10;
+  let timerWidth = 100;
+
+  timer = setInterval(() => {
+    timeLeft--;
+
+    if (timeLeft >= 0) {
+      timerWidth -= 10;
+      timerEl.style.width = timerWidth + "%";
+    } else {
+      stopTimer();
+      currentQuiz++;
+
+      if (currentQuiz < questionCount) {
+        loadQuiz();
+      } else {
+        showResults();
+      }
+    }
+  }, 1000);
+}
+
+function resetTimer() {
+  timerEl.style.width = "100%";
+}
+
+function stopTimer() {
+  clearInterval(timer);
+}
+
+function playVictoryMusic() {
   var music = new Audio('victory.mp3');
   music.play();
 }
-function playFailMusic(){
+
+function playFailMusic() {
   var music = new Audio('fail.mp3');
   music.play();
 }
