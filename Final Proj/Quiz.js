@@ -180,6 +180,7 @@ function showQuestions() {
       correct_answer.textContent = `Correct Answer: ${question_data.correct_answer}. ${correct_answer_text}`;
       question_div.appendChild(correct_answer);
       quiz_element.appendChild(question_div);
+
       quiz_element.appendChild(document.createElement('br'));
     }
   }
