@@ -140,6 +140,7 @@ function showResults() {
   quiz.innerHTML = `
     <h2>You answered ${score}/${questions.length} questions correctly</h2>
     <br>
+    <h2>You made ${questions.length - score} mistakes!</h2>
   `;
 
   showQuestions();
