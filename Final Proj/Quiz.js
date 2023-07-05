@@ -74,13 +74,13 @@ const progressBar = document.getElementById("progress-bar");
 const timerEl = document.getElementById("timer");
 
 
-let index = 0;
+let random_index;
+let answered = 0;
 let timer = 0;
 let used_questions = [];
 const choices = ['a', 'b', 'c', 'd'];
 
 function displayQuestion() {
-  let random_index;
   do {
     random_index = Math.floor(Math.random() * questions.length);
   } while (used_questions.includes(random_index));
@@ -110,11 +110,11 @@ function displayQuestion() {
 function submit() {
 
   const selected_answer = document.querySelector('input[name="answer"]:checked').id;
-  questions[index].selected_answer = selected_answer;
-  index++;
+  questions[random_index].selected_answer = selected_answer;
+  answered++;
   stopTimer();
 
-  if (index < questions.length) {
+  if (answered < questions.length) {
     displayQuestion();
   } else {
     showResults();
@@ -122,7 +122,7 @@ function submit() {
 }
 
 function updateProgressBar() {
-const percent = (index / questions.length) * 100;
+const percent = (answered / questions.length) * 100;
 progressBar.style.width = percent + "%";
 }
 
@@ -206,10 +206,10 @@ timer = setInterval(() => {
     timerWidth -= 10;
     timerEl.style.width = timerWidth + "%";
   } else {
-    index++;
+    answered++;
     stopTimer();
 
-    if (index < questions.length) {
+    if (answered < questions.length) {
       displayQuestion();
     } else {
       showResults();
