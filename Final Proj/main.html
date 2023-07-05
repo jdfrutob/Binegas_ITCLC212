@@ -1,47 +1,55 @@
 <!DOCTYPE html>
+
 <head>
     <title>ITCL12C Final Project</title>
     <link rel="stylesheet" href="Quiz.css" />
     <style>
         body {
+            color: #213555;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            min-height: 100vh;
-        }
-        .authors {
             text-align: center;
+            padding: 0.5rem;
         }
-        .authors span {
+
+        .authors-button {
+            background-color: #f5efe7;
+            color: #213555;
+            border: #213555 solid 2px;
+            border-radius: 30px;
+            width: 200px;
             cursor: pointer;
-        }
-        .authors span:hover {
+            font-size: 1.1rem;
+            font-family: inherit;
+            padding: 20px;
             font-weight: bold;
+            text-transform: uppercase;
             letter-spacing: 1px;
-            text-shadow: 0 0 10px #ca824e;
-            transition-duration: 0.5s;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .authors-button:hover {
+            background-color: #213555;
+            color: #f5efe7;
+            width: 220px;
         }
     </style>
 </head>
+
 <body>
     <div class="main-container" id="quiz">
         <div class="quiz-header">
             <h2 id="question">ITCL12C Quizlet</h2>
-            <h3 class="authors"> Submitted By : </h4>
-            <div class="authors">
-                <p>
-                    <br><span onclick="openLink('https://github.com/forodark')">Glen Angelo Bautista</span>
-                    <br><span onclick="openLink('https://github.com/jdfrutob')">John Daniel Binegas</span>
-                    <br><span onclick="openLink('https://github.com/marc-valdez')">Marc Joshua Valdez</span>
-                </p>
-            </div>
         </div>
-        <button onClick="location.href='Quiz.html'">Start</button>
+
+        <button class="authors-button" onClick="location.href='authors.html'">Submitted By</button>
+        <br><br><br><br>
+        <button class="main_button" onClick="location.href='Quiz.html'">Start</button>
     </div>
 </body>
 <script>
     function openLink(url) {
-        window.open(url, '_blank');
+        window.open(url, "_blank");
     }
 </script>
-</html>
