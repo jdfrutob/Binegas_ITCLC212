@@ -199,14 +199,14 @@ music.play();
 }
 
 function startTimer() {
-let timeLeft = 10;
+let timeLeft = 20;
 let timerWidth = 100;
 
 timer = setInterval(() => {
   timeLeft--;
 
   if (timeLeft >= 0) {
-    timerWidth -= 10;
+    timerWidth -= 5;
     timerEl.style.width = timerWidth + "%";
   } else {
     answered++;
